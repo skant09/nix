@@ -40,7 +40,7 @@
     enable = true;
     userEmail = "s.kant@outlook.com";
     userName = "Suryakant";
-    signing.key = "738A0BE6D8D8AE7D";
+    signing.key = "E655E84F28A40E67";
     signing.signByDefault = true;
   };
   programs.home-manager.enable = true;
