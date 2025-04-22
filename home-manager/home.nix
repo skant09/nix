@@ -35,6 +35,9 @@
     fortune
     figlet
     lolcat
+
+    #media
+    vlc
   ];
   programs.git = {
     enable = true;
