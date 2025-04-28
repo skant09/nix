@@ -20,6 +20,7 @@
     warp
     jq
     git-crypt
+    pnpm
 
     # Files
     zstd
