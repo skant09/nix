@@ -7,8 +7,10 @@ programs = {
           theme = "robbyrussell";
           plugins = [
             "sudo"
+	    "git"
             "terraform"
             "systemadmin"
+	    "powerlevel10k"
             "vi-mode"
           ];
         };
