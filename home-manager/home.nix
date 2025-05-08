@@ -13,6 +13,7 @@
 			bat
 			tokei
 			fd
+			nix
 
 			# Development
 			neovim
@@ -56,7 +57,11 @@
 		NODE_OPTIONS=--max_old_space_size=8192
   		'';
 		shellAliases = {
-   		   ip = "ip --color=auto";
+			l="exa";
+			la="exa -a";
+			ll="exa -lah";
+			ls="exa --color=auto";
+   		   	ip = "ip --color=auto";
    		 };
 	};
 	programs.home-manager.enable = true;
