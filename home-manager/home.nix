@@ -14,6 +14,9 @@
 			tokei
 			fd
 			nix
+			rustup
+			gcc
+			eza
 
 			# Development
 			neovim
@@ -30,7 +33,7 @@
 
 			# Overview
 			htop
-			wtf
+			wtfutil
 			lazygit
 			neofetch
 
@@ -57,10 +60,10 @@
 		NODE_OPTIONS=--max_old_space_size=8192
   		'';
 		shellAliases = {
-			l="exa";
-			la="exa -a";
-			ll="exa -lah";
-			ls="exa --color=auto";
+			l="eza";
+			la="eza -a";
+			ll="eza -lah";
+			ls="eza --color=auto";
    		   	ip = "ip --color=auto";
    		 };
 	};
