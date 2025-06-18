@@ -7,10 +7,10 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-	  mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util.url = "github:hraban/mac-app-util";
     home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
@@ -47,8 +47,9 @@
         programs.zsh.enable = true;
         environment.systemPackages = with pkgs; [
           neofetch
-		      pnpm
+          pnpm
           nodePackages.pnpm
+          notion-app
           nodejs_20
         ];
 
@@ -57,40 +58,40 @@
           # onActivation.cleanup = "uninstall";
           taps = [ ];
           brews = [
-		        "cowsay"
-	        ];
+            "cowsay"
+          ];
           casks = [ "brave-browser" "postman" ];
         };
       };
-	    homeconfig = {pkgs, ...}: {
-            # this is internal compatibility configuration 
-            # for home-manager, don't change this!
-            home.stateVersion = "23.05";
-            # Let home-manager install and manage itself.
-            programs.home-manager.enable = true;
+      homeconfig = {pkgs, ...}: {
+        # this is internal compatibility configuration 
+        # for home-manager, don't change this!
+        home.stateVersion = "23.05";
+        # Let home-manager install and manage itself.
+        programs.home-manager.enable = true;
 
-            home.packages = with pkgs; [];
+        home.packages = with pkgs; [];
 
-            home.sessionVariables = {
-                EDITOR = "vim";
-            };
-	    programs.vscode = {
-      		  enable = true;
-    	    };
+        home.sessionVariables = {
+          EDITOR = "vim";
         };
+        programs.vscode = {
+          enable = true;
+        };
+      };
     in
-    {
+      {
       darwinConfigurations."Suryakants-MacBook-Air" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
-	        home-manager.darwinModules.home-manager  {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.verbose = true;
-                home-manager.users.suryakant = homeconfig;
-		            home-manager.sharedModules = [
-              	  mac-app-util.homeManagerModules.default
-            	];
+          home-manager.darwinModules.home-manager  {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.verbose = true;
+            home-manager.users.suryakant = homeconfig;
+            home-manager.sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
           }
         ];
       };
