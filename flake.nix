@@ -56,11 +56,13 @@
         homebrew = {
           enable = true;
           # onActivation.cleanup = "uninstall";
-          taps = [ ];
+          taps = [];
           brews = [
-            "cowsay"
+            "awscli"
+            "python3"
+            "hashicorp/tap/terraform"
           ];
-          casks = [ "brave-browser" "postman" ];
+          casks = ["brave-browser" "postman" "raycast" "zoom"];
         };
       };
       homeconfig = {pkgs, ...}: {
