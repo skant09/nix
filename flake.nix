@@ -59,10 +59,11 @@
           taps = [];
           brews = [
             "awscli"
+            "redis"
             "python3"
             "hashicorp/tap/terraform"
           ];
-          casks = ["brave-browser" "postman" "raycast" "zoom"];
+          casks = ["brave-browser" "postman" "raycast" "zoom" "onlyoffice"];
         };
       };
       homeconfig = {pkgs, ...}: {
