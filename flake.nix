@@ -50,7 +50,9 @@
           pnpm
           nodePackages.pnpm
           notion-app
+          telegram-desktop
           nodejs_20
+          ranger
         ];
 
         homebrew = {
@@ -62,6 +64,8 @@
             "redis"
             "python3"
             "hashicorp/tap/terraform"
+            "ngrok"
+            "zoxide"
           ];
           casks = ["brave-browser" "postman" "raycast" "zoom" "onlyoffice"];
         };
